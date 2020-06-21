@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BlogPlatform.Models.Content>
+﻿@model IEnumerable<BlogPlatform.Models.Genre>
 @{
     Layout = null;
 }
@@ -11,6 +11,10 @@
     <title>Index</title>
 </head>
 <body>
-    <h1>Content Index</h1>
+    <h1>Index Page</h1>
+    @foreach (var genre in Model)
+    {
+        <h3>Genre Name: @genre.Name</h3>
+    }
 </body>
 </html>

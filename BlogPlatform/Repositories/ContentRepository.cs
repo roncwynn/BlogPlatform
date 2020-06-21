@@ -17,8 +17,6 @@ namespace BlogPlatform.Repositories
 
         }
 
-        
-
         public IEnumerable<Content> GetAll()
         {
             return db.Contents;

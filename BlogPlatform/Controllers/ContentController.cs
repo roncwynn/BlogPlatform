@@ -10,16 +10,12 @@ namespace BlogPlatform.Controllers
 {
 public class ContentController:Controller
     {
-
-
         IRepository<Content> ContentRepo;
 
         public ContentController(IRepository<Content> contentRepo)
         {
             this.ContentRepo = contentRepo;
         }
-
-
 
         public ViewResult Index()
         {
