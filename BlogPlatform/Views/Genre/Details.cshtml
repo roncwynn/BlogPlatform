@@ -1,0 +1,26 @@
+﻿@model BlogPlatform.Models.Genre
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <h1> Genre Blog Details</h1>
+    @foreach (var blog in Model.Content)
+    {
+        <p>Title: <span>@blog.Title</span></p>
+        <p>Author: <span>@blog.Author</span></p>
+        <p>PublishDate: <span>@blog.PublishDate</span></p>
+        <p>Body: <span>@blog.Body</span></p>
+    }
+    <hr />
+    <a href="/Genre/Index">Return</a>
+
+</body>
+</html>

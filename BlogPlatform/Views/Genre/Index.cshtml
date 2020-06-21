@@ -14,7 +14,7 @@
     <h1>Index Page</h1>
     @foreach (var genre in Model)
     {
-        <h3>Genre Name: @genre.Name</h3>
+        <h3><a href="/Genre/Details/@genre.Id">Genre Name: @genre.Name</a></h3>
     }
 </body>
 </html>

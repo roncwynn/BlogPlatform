@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 
 namespace BlogPlatform.Models
 {
     public class Content
     {
         public int ContentId { get; set; }
-        public int GenreID { get; set; }
+        //public int GenreID { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
         public string Author { get; set; }
         public DateTime PublishDate { get; set; }
 
+        public int GenreId { get; set; }
         public virtual Genre Genre { get; set; }
 
         public Content()
@@ -23,12 +25,12 @@ namespace BlogPlatform.Models
         {
 
             this.ContentId = contentID;
-            this.GenreID = genreID;
+            this.GenreId = genreID;
             this.Title = title;
             this.Body = body;
             this.Author = author;
             this.PublishDate = publishDate;
-
+            //this.GenreID
 
         }
 
