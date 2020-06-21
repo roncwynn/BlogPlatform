@@ -14,7 +14,10 @@ namespace BlogPlatform.Models
 
         public DateTime PublishDate { get; set; }
 
+        public Content()
+        {
 
+        }
 
         public Content(int contentID, int genreID, string title, string body, string author, DateTime publishDate)
         {

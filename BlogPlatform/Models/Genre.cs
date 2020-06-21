@@ -13,6 +13,11 @@ namespace BlogPlatform.Models
 
         public string Description { get; set; }
 
+        public Genre()
+        {
+
+        }
+
         public Genre(int id, string name, string description)
         {
             this.Id = id;
