@@ -2,10 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlogPlatform.Models;
+using BlogPlatform.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BlogPlatform.Controllers
 {
-    public class ContentController
+public class ContentController:Controller
     {
+
+
+        IRepository<Content> ContentRepo;
+
+        public ContentController(IRepository<Content> contentRepo)
+        {
+            this.ContentRepo = contentRepo;
+        }
+
+
+
+        public ViewResult Index()
+        {
+            //Use our repo that is on line 17
+            var model = ContentRepo.GetAll();
+            return View(model);
+        }
+
+        public ViewResult Details(int id)
+        {
+            //Use our repo that is on line 17
+            var model = this.ContentRepo.GetById(id);
+            return View(model);
+
+
+        }
+
+
     }
 }
