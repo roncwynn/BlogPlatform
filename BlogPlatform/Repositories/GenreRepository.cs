@@ -9,7 +9,6 @@ namespace BlogPlatform.Repositories
 {
     public class GenreRepository : IRepository<Genre>
     {
-        //public List<RestaurantReview.Models.Restaurant> restaurants;
 
         private BlogPlatformContext db;
 
