@@ -77,6 +77,9 @@ public class ContentController:Controller
         [HttpPost]
         public ActionResult Update(Content content)
         {
+
+            content.PublishDate = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 content.PublishDate = DateTime.Now;

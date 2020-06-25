@@ -4,14 +4,16 @@ using BlogPlatform.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlogPlatform.Migrations
 {
     [DbContext(typeof(BlogPlatformContext))]
-    partial class BlogPlatformContextModelSnapshot : ModelSnapshot
+    [Migration("20200625230342_add-migration rev2")]
+    partial class addmigrationrev2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,7 +56,7 @@ namespace BlogPlatform.Migrations
                             Author = "Jay Bowen",
                             Body = "Rons super wood",
                             GenreId = 1,
-                            PublishDate = new DateTime(2020, 6, 25, 19, 25, 42, 703, DateTimeKind.Local).AddTicks(7791),
+                            PublishDate = new DateTime(2020, 6, 25, 19, 3, 42, 260, DateTimeKind.Local).AddTicks(4276),
                             Title = "My first candle boat"
                         },
                         new
@@ -63,7 +65,7 @@ namespace BlogPlatform.Migrations
                             Author = "Ron Wynn",
                             Body = "Ash",
                             GenreId = 1,
-                            PublishDate = new DateTime(2020, 6, 25, 19, 25, 42, 706, DateTimeKind.Local).AddTicks(6904),
+                            PublishDate = new DateTime(2020, 6, 25, 19, 3, 42, 262, DateTimeKind.Local).AddTicks(8459),
                             Title = "My second candle boat"
                         },
                         new
@@ -72,7 +74,7 @@ namespace BlogPlatform.Migrations
                             Author = "Ron Wynn",
                             Body = "All rooms",
                             GenreId = 2,
-                            PublishDate = new DateTime(2020, 6, 25, 19, 25, 42, 706, DateTimeKind.Local).AddTicks(7002),
+                            PublishDate = new DateTime(2020, 6, 25, 19, 3, 42, 262, DateTimeKind.Local).AddTicks(8539),
                             Title = "Clean house"
                         },
                         new
@@ -81,7 +83,7 @@ namespace BlogPlatform.Migrations
                             Author = "Ron Wynn",
                             Body = "this is body",
                             GenreId = 3,
-                            PublishDate = new DateTime(2020, 6, 25, 19, 25, 42, 706, DateTimeKind.Local).AddTicks(7007),
+                            PublishDate = new DateTime(2020, 6, 25, 19, 3, 42, 262, DateTimeKind.Local).AddTicks(8544),
                             Title = "Swimming"
                         });
                 });
