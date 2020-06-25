@@ -12,9 +12,19 @@ namespace BlogPlatform.Repositories
         private BlogPlatformContext db;
         public ContentRepository(BlogPlatformContext otherDB)
         {
-
             this.db = otherDB;
+        }
 
+        public void Create(Content content)
+        {
+            db.Contents.Add(content);
+            db.SaveChanges();
+        }
+
+        public void Delete(Content content)
+        {
+            db.Contents.Remove(content);
+            db.SaveChanges();
         }
 
         public IEnumerable<Content> GetAll()
@@ -25,6 +35,12 @@ namespace BlogPlatform.Repositories
         public Content GetById(int id)
         {
             return db.Contents.FirstOrDefault(x => x.ContentId == id);
+        }
+
+        public void Update(Content content)
+        {
+            db.Contents.Update(content);
+            db.SaveChanges();
         }
     }
 }

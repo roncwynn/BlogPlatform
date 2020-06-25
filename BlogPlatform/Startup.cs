@@ -30,6 +30,7 @@ namespace BlogPlatform
             services.AddMvc();
             services.AddDbContext<BlogPlatformContext>();
             services.AddScoped<IRepository<Genre>, GenreRepository>();
+            services.AddScoped<IRepository<Content>, ContentRepository>();
         }
 
 

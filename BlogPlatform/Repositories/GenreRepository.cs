@@ -25,5 +25,48 @@ namespace BlogPlatform.Repositories
         {
             return db.Genres.FirstOrDefault(x => x.Id == id);
         }
+
+        public void Delete(Content content)
+        {
+            throw new NotImplementedException();
+        }
+        public void Create(Content content)
+        {
+            throw new NotImplementedException();
+        }
+        public void Update(Content content)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Create(Genre obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        //void IRepository<Genre>.Create(Genre obj)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //void IRepository<Genre>.Delete(Content content)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //IEnumerable<Genre> IRepository<Genre>.GetAll()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Genre IRepository<Genre>.GetById(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //void IRepository<Genre>.Update(Content content)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

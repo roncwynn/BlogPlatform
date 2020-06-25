@@ -1,4 +1,5 @@
-﻿@{
+﻿@model BlogPlatform.Models.Content
+@{
     Layout = null;
 }
 
@@ -12,6 +13,7 @@
 <body>
     <h1> Content Blog  Details</h1>
     <hr />
+    <p>Blog Title: <span>@Model.Title</span></p>
     <a href="/Genre/Index">Return</a>
 </body>
 </html>
