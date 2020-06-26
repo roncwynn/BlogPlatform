@@ -33,6 +33,8 @@ namespace BlogPlatform.Models
             this.Author = author;
             this.PublishDate = publishDate;
 
+
+
         }
 
 

@@ -19,38 +19,59 @@
         <div class="col-md-4">
             @*<form asp-action="CreateByGenreID">*@
             <form asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="Title" class="control-label"></label>
-                        <input asp-for="Title" class="form-control" />
-                        <span asp-validation-for="Title" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Body" class="control-label"></label>
-                        <input asp-for="Body" class="form-control" />
-                        <span asp-validation-for="Body" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Author" class="control-label"></label>
-                        <input asp-for="Author" class="form-control" />
-                        <span asp-validation-for="Author" class="text-danger"></span>
-                    </div>
-                    @*<div class="form-group">
-                        <label asp-for="PublishDate" class="control-label"></label>
-                        <input asp-for="PublishDate" class="form-control" />
-                        <span asp-validation-for="PublishDate" class="text-danger"></span>
-                    </div>*@
-                    <div class="form-group">
-                        @*<label asp-for="GenreId" class="control-label"></label>*@
-                        <input asp-for="GenreId" class="form-control" value="@ViewBag.GenreId" type="hidden"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-primary" />
-                    </div>
-                    <div>
-                        <a href="/Genre/Details/@ViewBag.GenreId">Return to Genre Details</a>
-                    </div>
-                </form>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Body" class="control-label"></label>
+                    <input asp-for="Body" class="form-control" />
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Author" class="control-label"></label>
+                    <input asp-for="Author" class="form-control" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+                <div>
+                    <select asp-for="@Model.ContentTags[0].Tag.Name">
+                        <option value="Tag1">TagOne</option>
+                        <option value="Tag2">TagtTwo</option>
+                        <option value="Tag3">TagtThree</option>
+                    </select>
+                </div>
+                <div>
+                    <select asp-for="@Model.ContentTags[1].Tag.Name">
+                        <option value="Tag1">TagOne</option>
+                        <option value="Tag2">TagtTwo</option>
+                        <option value="Tag3">TagtThree</option>
+                    </select>
+                </div>
+                <div>
+                    <select asp-for="@Model.ContentTags[2].Tag.Name">
+                        <option value="Tag1">TagOne</option>
+                        <option value="Tag2">TagtTwo</option>
+                        <option value="Tag3">TagtThree</option>
+                    </select>
+                </div>
+                @*<div class="form-group">
+            <label asp-for="PublishDate" class="control-label"></label>
+            <input asp-for="PublishDate" class="form-control" />
+            <span asp-validation-for="PublishDate" class="text-danger"></span>
+        </div>*@
+                <div class="form-group">
+                    @*<label asp-for="GenreId" class="control-label"></label>*@
+                    <input asp-for="GenreId" class="form-control" value="@ViewBag.GenreId" type="hidden" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+                <div>
+                    <a href="/Genre/Details/@ViewBag.GenreId">Return to Genre Details</a>
+                </div>
+            </form>
 </div>
     </div>
 </body>
