@@ -35,17 +35,24 @@
                     <input asp-for="Author" class="form-control" />
                     <span asp-validation-for="Author" class="text-danger"></span>
                 </div>
-                @*<div class="form-group">
-                    <label asp-for="PublishDate" class="control-label"></label>
-                    <input asp-for="PublishDate" class="form-control" />
-                    <span asp-validation-for="PublishDate" class="text-danger"></span>
-                </div>*@
-            <div class="form-group">
-         @*<label asp-for="GenreId" class="control-label"></label>*@
-        <input asp-for="GenreId" type="hidden" class="form-control" asp-items="@ViewBag.GenreId" />
-        @*<span asp-validation-for="GenreId" class="text-danger"></span>*@
-                @*<input asp-for="GenreId" class="form-control" value="@ViewBag.GenreId" type="hidden" />*@
-            </div>
+                <div>
+                    <select asp-for="ContentTags[0].TagId">
+                        <option value="1">Tag 1</option>
+                        <option value="2">Tag 2</option>
+                        <option value="3">Tag 3</option>
+                    </select>
+                </div>
+                <div>
+                    <select asp-for="ContentTags[1].TagId">
+                        <option value="1">Tag 1</option>
+                        <option value="2">Tag 2</option>
+                        <option value="3">Tag 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="GenreId" type="hidden" class="form-control" asp-items="@ViewBag.GenreId" />
+                </div>
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-primary" />
                 </div>

@@ -1,4 +1,5 @@
 ﻿@model BlogPlatform.Models.Content
+@*@model BlogPlatform.Models.ContentTag*@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = null;
@@ -36,29 +37,20 @@
                     <span asp-validation-for="Author" class="text-danger"></span>
                 </div>
                 <div>
-                    @*<select asp-for="ContentTags[0].TagId">*@
-                            <option value="Tag1">TagOne</option>
-                            <option value="Tag2">TagtTwo</option>
-                            <option value="Tag3">TagtThree</option>
+                    <select asp-for="ContentTags[0].TagId">
+                        <option value="1">Tag 1</option>
+                        <option value="2">Tag 2</option>
+                        <option value="3">Tag 3</option>
                     </select>
-                    @*<input asp-for="ContentTags[0].ContentId" value="ContentId" type="hidden"/>*@
                 </div>
                 <div>
-                    @*<select asp-for="@Model.ContentTags[1].Tag.Name">*@
                     <select asp-for="ContentTags[1].TagId">
-                        <option value="Tag1">TagOne</option>
-                        <option value="Tag2">TagtTwo</option>
-                        <option value="Tag3">TagtThree</option>
+                        <option value="1">Tag 1</option>
+                        <option value="2">Tag 2</option>
+                        <option value="3">Tag 3</option>
                     </select>
-                    @*<input asp-for="ContentTags[1].ContentId" value="ContentId" type="hidden" />*@
                 </div>
-                @*<div class="form-group">
-            <label asp-for="PublishDate" class="control-label"></label>
-            <input asp-for="PublishDate" class="form-control" />
-            <span asp-validation-for="PublishDate" class="text-danger"></span>
-        </div>*@
                 <div class="form-group">
-                    @*<label asp-for="GenreId" class="control-label"></label>*@
                     <input asp-for="GenreId" class="form-control" value="@ViewBag.GenreId" type="hidden" />
                 </div>
                 <div class="form-group">
