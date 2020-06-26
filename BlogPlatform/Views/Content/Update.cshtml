@@ -41,6 +41,7 @@
                         <option value="2">Tag 2</option>
                         <option value="3">Tag 3</option>
                     </select>
+                    <input asp-for="ContentTags[0].ContentId" value="@Model.ContentId" type="hidden" />
                 </div>
                 <div>
                     <select asp-for="ContentTags[1].TagId">
@@ -48,6 +49,7 @@
                         <option value="2">Tag 2</option>
                         <option value="3">Tag 3</option>
                     </select>
+                    <input asp-for="ContentTags[1].ContentId" value="@Model.ContentId" type="hidden" />
                 </div>
 
                 <div class="form-group">
