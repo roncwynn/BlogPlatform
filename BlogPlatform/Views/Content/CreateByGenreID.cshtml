@@ -36,25 +36,21 @@
                     <span asp-validation-for="Author" class="text-danger"></span>
                 </div>
                 <div>
-                    <select asp-for="@Model.ContentTags[0].Tag.Name">
-                        <option value="Tag1">TagOne</option>
-                        <option value="Tag2">TagtTwo</option>
-                        <option value="Tag3">TagtThree</option>
+                    @*<select asp-for="ContentTags[0].TagId">*@
+                            <option value="Tag1">TagOne</option>
+                            <option value="Tag2">TagtTwo</option>
+                            <option value="Tag3">TagtThree</option>
                     </select>
+                    @*<input asp-for="ContentTags[0].ContentId" value="ContentId" type="hidden"/>*@
                 </div>
                 <div>
-                    <select asp-for="@Model.ContentTags[1].Tag.Name">
+                    @*<select asp-for="@Model.ContentTags[1].Tag.Name">*@
+                    <select asp-for="ContentTags[1].TagId">
                         <option value="Tag1">TagOne</option>
                         <option value="Tag2">TagtTwo</option>
                         <option value="Tag3">TagtThree</option>
                     </select>
-                </div>
-                <div>
-                    <select asp-for="@Model.ContentTags[2].Tag.Name">
-                        <option value="Tag1">TagOne</option>
-                        <option value="Tag2">TagtTwo</option>
-                        <option value="Tag3">TagtThree</option>
-                    </select>
+                    @*<input asp-for="ContentTags[1].ContentId" value="ContentId" type="hidden" />*@
                 </div>
                 @*<div class="form-group">
             <label asp-for="PublishDate" class="control-label"></label>

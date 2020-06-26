@@ -19,14 +19,12 @@ public class ContentController:Controller
 
         public ViewResult Index()
         {
-            //Use our repo that is on line 17
             var model = ContentRepo.GetAll();
             return View(model);
         }
 
         public ViewResult Details(int id)
         {
-            //Use our repo that is on line 17
             var model = this.ContentRepo.GetById(id);
             return View(model);
         }
@@ -39,13 +37,16 @@ public class ContentController:Controller
         [HttpPost]
         public ActionResult Create(Content content)
         {
-            if (ModelState.IsValid)
-            {
-                content.PublishDate = DateTime.Now;
+ //            if (ModelState.IsValid)
+ //            {
+            //content.ContentTags[0].TagId = 1;
+            //content.ContentTags[1].TagId = 2;
+
+            content.PublishDate = DateTime.Now;
                 ContentRepo.Create(content);
                 return RedirectToAction("Details", "Genre", new { id = content.GenreId });
-            }
-            return View(content);
+            //}
+            //return View(content);
         }
 
         [HttpGet]
