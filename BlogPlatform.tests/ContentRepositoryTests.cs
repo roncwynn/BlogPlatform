@@ -42,5 +42,31 @@ namespace BlogPlatform.tests
             var endCount = db.Contents.Count();
             Assert.Equal(startCount + 1, endCount);
         }
+
+        //[Fact]
+        //public void Delete_Decreases_Count_of_Contents()
+        //{
+        //    var startCount = db.Contents.Count();
+        //    underTest.Delete(new Content());
+        //    var endCount = db.Contents.Count();
+        //    Assert.Equal(startCount + 1, endCount);
+        //}
+
+        //[Fact]
+        //public void Update_Does_NOT_Change_Count_of_Contents()
+        //{
+        //    var startCount = db.Contents.Count();
+        //    underTest.Update(new Content()
+        //    {
+        //        Title = "update blog entry",
+        //        Body = "update blog body",
+        //        Author = "update author",
+        //        PublishDate = DateTime.Now,
+        //        GenreId = 2
+        //    });
+        //    var endCount = db.Contents.Count();
+        //    Assert.Equal(startCount, endCount);
+        //
+        //}
     }
 }
