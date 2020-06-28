@@ -75,7 +75,6 @@ public class ContentController:Controller
         [HttpPost]
         public ActionResult Update(Content content)
         {
-
             content.PublishDate = DateTime.Now;
 
             if (ModelState.IsValid)
@@ -87,8 +86,5 @@ public class ContentController:Controller
             }
             return View(content);
         }
-
-
-
     }
 }
