@@ -2,16 +2,23 @@
     font-family: sans-serif;
     line-height: 1.618em;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+   
+    text-decoration: none;
+}
+
+body {
+   
 }
 
 html {
     font-size: 16px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     color: #666;
+    font-family: sans-serif;
+    margin-left: 10px;
+    padding-left: 10px;
 }
 
 header, main, footer {
@@ -28,6 +35,11 @@ header h1 {
     font-size: 3em;
     color: #2a6592
 }
+
+    header h6 {
+        font-size: 16px;
+        color: #2a6592
+    }
 
 header span {
     font-size: 1.5em;
@@ -62,6 +74,7 @@ section ul {
     grid-column-gap: 1em;
     width:25%;
     height: 100px;
+    margin-left: 10px
 }
 
 #genreArticle article {
