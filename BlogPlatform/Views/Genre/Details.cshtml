@@ -4,31 +4,42 @@
 }
 
 <!DOCTYPE html>
-
+<link rel="stylesheet" type="text/css" href="~/CSS/style.css" />
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
 </head>
 <body>
-    <h1> Genre Blog Details</h1>
+    <h1> @Model.Name Genre</h1>
+    <hr />
+
     @foreach (var blog in Model.Content)
     {
-        <p>Title: <span><a href="/Content/Details/@blog.ContentId">@blog.Title</a></span></p>
+
+        <h2><span><a href="/Content/Details/@blog.ContentId">Edit: @blog.Title </a> </span></h2>
+
+
         <p>Author: <span>@blog.Author</span></p>
-        <p>PublishDate: <span>@blog.PublishDate</span></p>
+        <p>Publish Date: <span>@blog.PublishDate</span></p>
         <p>Body: <span>@blog.Body</span></p>
         <p>
             Tags:
-            @foreach (var tag in blog.ContentTags)
-            {
-                <span>@tag.Tag.Name</span>
-            }
+            <ul>
+                @foreach (var tag in blog.ContentTags)
+                {
+
+                    <li>@tag.Tag.Name</li>
+
+                }
+            </ul>
         </p>
+        <hr />
     }
     <hr />
-    <p><a href="/Content/CreateByGenreID/@Model.Id">Add New Blog Entry</a></p>
-    <p><a href="/Genre/Index">Return</a></p>
-
+    <article>
+        <p><a href="/Content/CreateByGenreID/@Model.Id">Add New Blog Entry</a></p>
+        <p><a href="/Genre/Index">Return</a></p>
+    </article>
 </body>
 </html>
