@@ -52,21 +52,26 @@ namespace BlogPlatform.tests
         //    Assert.Equal(startCount + 1, endCount);
         //}
 
-        //[Fact]
-        //public void Update_Does_NOT_Change_Count_of_Contents()
-        //{
-        //    var startCount = db.Contents.Count();
-        //    underTest.Update(new Content()
-        //    {
-        //        Title = "update blog entry",
-        //        Body = "update blog body",
-        //        Author = "update author",
-        //        PublishDate = DateTime.Now,
-        //        GenreId = 2
-        //    });
-        //    var endCount = db.Contents.Count();
-        //    Assert.Equal(startCount, endCount);
-        //
-        //}
+        [Fact]
+        public void Update_Does_NOT_Change_Count_of_Contents()
+        {
+            db = new BlogPlatformContext();
+            db.Database.BeginTransaction();
+            underTest = new ContentRepository(db);
+
+            var startCount = db.Contents.Count();
+            underTest.Update(new Content()
+            {
+                Title = "update blog entry",
+                Body = "update blog body",
+                Author = "update author",
+                PublishDate = DateTime.Now,
+                GenreId = 2
+            });
+            //db.Database.RollbackTransaction();
+            var endCount = db.Contents.Count();
+            Assert.Equal(startCount, endCount);
+
+        }
     }
 }
