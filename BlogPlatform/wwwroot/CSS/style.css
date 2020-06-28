@@ -1,0 +1,100 @@
+* {
+    font-family: sans-serif;
+    line-height: 1.618em;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    color: #666;
+}
+
+header, main, footer {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+header {
+    padding: 2em 0;
+    margin-top: 3em;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #2a6592
+}
+
+header span {
+    font-size: 1.5em;
+    color: #999;
+}
+
+.biopicture{
+    /* width: 100%; */
+    border: 2px solid #C0C0C0;
+    padding: 5px;
+}
+
+section {
+    margin: 1em 0;
+    padding-top: 3em;
+    min-height: 5em;
+}
+
+section>p {
+    margin: 1em 0;
+}
+
+section ul {
+    padding-left: 1.5em;
+    color: black;
+}
+
+#genreArticle {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr);*/
+    grid-template-rows: auto;
+    grid-column-gap: 1em;
+    width:25%;
+    height: 100px;
+}
+
+#genreArticle article {
+    
+    padding: 2em;
+    color: black;
+}
+
+#genreArticle article img {
+    width: 100%;
+    border: 1px solid #333;
+}
+
+#img {
+    width: 100%;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 5px;
+    /*style ="width:500px;height:600px;*/
+   
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+
+footer {
+    margin-top: 2em;
+    margin-bottom: 1em;   
+    background: #2a6592;
+    padding: 1em 0;
+    text-align: center;
+    color:white;
+}
