@@ -5,7 +5,7 @@
 }
 
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="~/CSS/style.css" />
+<link rel="stylesheet" type="text/css" href="~/CSS/DetailStyle.css" />
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -15,56 +15,59 @@
 
     <h1>You are editing the following entry</h1>
     <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Update">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="ContentId" />
-                <div class="form-group">
-                    <label asp-for="Title" class="control-label"></label>
-                    <input asp-for="Title" class="form-control" required/>
-                    <span asp-validation-for="Title" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Body" class="control-label"></label>
-                    <input asp-for="Body" class="form-control" required/>
-                    <span asp-validation-for="Body" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Author" class="control-label"></label>
-                    <input asp-for="Author" class="form-control" readonly/>
-                    <span asp-validation-for="Author" class="text-danger"></span>
-                </div>
-                <div>
-                    <select asp-for="ContentTags[0].TagId">
-                        <option value="1">Tag 1</option>
-                        <option value="2">Tag 2</option>
-                        <option value="3">Tag 3</option>
-                    </select>
-                    <input asp-for="ContentTags[0].ContentId" value="@Model.ContentId" type="hidden" />
-                </div>
-                <div>
-                    <select asp-for="ContentTags[1].TagId">
-                        <option value="1">Tag 1</option>
-                        <option value="2">Tag 2</option>
-                        <option value="3">Tag 3</option>
-                    </select>
-                    <input asp-for="ContentTags[1].ContentId" value="@Model.ContentId" type="hidden" />
-                </div>
+    @*<img src="~/Images/@Model.ImageName" />*@
+    <div class="blogEntry">
+        <article>
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Update">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ContentId" />
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <input asp-for="Title" class="form-control" required />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Body" class="control-label"></label>
+                            <input asp-for="Body" class="form-control" required />
+                            <span asp-validation-for="Body" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Author" class="control-label"></label>
+                            <input asp-for="Author" class="form-control" readonly />
+                            <span asp-validation-for="Author" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <select asp-for="ContentTags[0].TagId">
+                                <option value="1">Tag 1</option>
+                                <option value="2">Tag 2</option>
+                                <option value="3">Tag 3</option>
+                            </select>
+                            <input asp-for="ContentTags[0].ContentId" value="@Model.ContentId" type="hidden" />
+                        </div>
+                        <div>
+                            <select asp-for="ContentTags[1].TagId">
+                                <option value="1">Tag 1</option>
+                                <option value="2">Tag 2</option>
+                                <option value="3">Tag 3</option>
+                            </select>
+                            <input asp-for="ContentTags[1].ContentId" value="@Model.ContentId" type="hidden" />
+                        </div>
 
-                <div class="form-group">
-                    <input asp-for="GenreId" type="hidden" class="form-control" asp-items="@ViewBag.GenreId" />
+                        <div class="form-group">
+                            <input asp-for="GenreId" type="hidden" class="form-control" asp-items="@ViewBag.GenreId" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
+            </div>
+            <div>
+                <a href="/Content/Details/@Model.GenreId">Back To Blog Details</a>
+            </div>
+        </article>
     </div>
-
-    <div>
-        <a asp-action="Index">Back to Genre List</a>
-    </div>
-
 </body>
 </html>

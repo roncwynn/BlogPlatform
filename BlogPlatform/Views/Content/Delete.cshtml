@@ -5,7 +5,7 @@
 }
 
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="~/CSS/style.css" />
+<link rel="stylesheet" type="text/css" href="~/CSS/DetailStyle.css" />
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -13,49 +13,54 @@
 </head>
 <body>
 
-    <h3>Are you sure you want to delete this entry?</h3>
     <div>
-        <h4>Content</h4>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Title)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Body)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Body)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Author)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Author)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.PublishDate)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.PublishDate)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Genre)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Genre.Id)
-            </dd>
-        </dl>
+        @*<img src="~/Images/@Model.ImageName" />*@
+        <div class="blogEntry">
+            <h4>Delete</h4>
+            <h3>Are you sure you want to delete this entry?</h3>
+            <hr />
+            <article>
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Body)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Body)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Author)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Author)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.PublishDate)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.PublishDate)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Genre)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Genre.Id)
+                    </dd>
+                </dl>
 
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="GenreId" />
-            <input type="hidden" asp-for="ContentId" />
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            <a asp-action="Index">Back to List</a>
-        </form>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="GenreId" />
+                    <input type="hidden" asp-for="ContentId" />
+                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                    <a href="/Content/Details/@Model.GenreId">Back To Blog Details</a>
+                </form>
+            </article>
+        </div>
     </div>
 </body>
 </html>

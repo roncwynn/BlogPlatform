@@ -1,20 +1,26 @@
 * {
-    font-family: sans-serif;
-    line-height: 1.618em;
-    box-sizing: border-box;
-   
-    text-decoration: none;
 }
 
 body {
-   
+    font-family: sans-serif;
+    line-height: 1.618em;
+    box-sizing: border-box;
+    background-image: url(/Images/BlogBackground1.jpg);
+    background-size: cover;
+    text-decoration: none;
 }
 
 html {
     font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    text-align: center;
+    color: darkgreen;
+    margin-top: 50px;
+}
+
+h2, h3, h4, h5, h6 {
     color: #666;
     font-family: sans-serif;
     margin-left: 10px;
@@ -46,12 +52,6 @@ header span {
     color: #999;
 }
 
-.biopicture{
-    /* width: 100%; */
-    border: 2px solid #C0C0C0;
-    padding: 5px;
-}
-
 section {
     margin: 1em 0;
     padding-top: 3em;
@@ -69,12 +69,11 @@ section ul {
 
 #genreArticle {
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr);*/
     grid-template-rows: auto;
-    grid-column-gap: 1em;
-    width:25%;
+    grid-column-gap: 10em;
+    width: 25%;
     height: 100px;
-    margin-left: 10px
+    margin-left: 500px;
 }
 
 #genreArticle article {
@@ -94,14 +93,11 @@ section ul {
     border-radius: 8px;
     padding: 5px;
     /*style ="width:500px;height:600px;*/
-   
-    
 }
 
 a {
     text-decoration: none;
 }
-
 
 footer {
     margin-top: 2em;
