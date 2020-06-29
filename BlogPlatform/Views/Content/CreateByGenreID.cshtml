@@ -14,10 +14,11 @@
 </head>
 <body>
 
+    @*<img src="~/Images/@Model.ImageName" />*@
+    <h1>Add new blog entry:</h1>
+    <hr />
     <div id="genreArticle">
-        @*<img src="~/Images/@Model.ImageName" />*@
         <div class="blogEntry">
-            <h2>Add new blog entry:</h2>
             <article>
                 <br />
                 <div class="row">
@@ -45,17 +46,25 @@
                             <br />
                             <div>
                                 <select asp-for="ContentTags[0].TagId">
-                                    <option value="1">Tag 1</option>
-                                    <option value="2">Tag 2</option>
-                                    <option value="3">Tag 3</option>
+                                    <option value="1">Hot Peppers</option>
+                                    <option value="2">Mild Peppers</option>
+                                    <option value="3">Corn</option>
+                                    <option value="4">Rafting</option>
+                                    <option value="5">Oak</option>
+                                    <option value="6">Maple</option>
+                                    <option value="7">Table Saw</option>
                                 </select>
                             </div>
                             <br />
                             <div>
                                 <select asp-for="ContentTags[1].TagId">
-                                    <option value="1">Tag 1</option>
-                                    <option value="2">Tag 2</option>
-                                    <option value="3">Tag 3</option>
+                                    <option value="1">Hot Peppers</option>
+                                    <option value="2">Mild Peppers</option>
+                                    <option value="3">Corn</option>
+                                    <option value="4">Rafting</option>
+                                    <option value="5">Oak</option>
+                                    <option value="6">Maple</option>
+                                    <option value="7">Table Saw</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -67,13 +76,13 @@
                             </div>
                             <br />
                             <div>
-                                <a href="/Genre/Details/@ViewBag.GenreId">Return to Genre Details</a>
+                                <h3><a href="/Genre/Details/@ViewBag.GenreId">Return to Genre Details</a></h3>
                             </div>
                         </form>
                     </div>
                 </div>
-                </article>
-            </div>
+            </article>
+        </div>
         </div>
 </body>
 </html>

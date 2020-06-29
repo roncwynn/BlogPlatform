@@ -16,24 +16,29 @@
     @*<img src="~/Images/@Model.ImageName" />*@
     <div class="blogEntry">
         <article>
-            <p>Author: <span>@Model.Author</span></p>
-            <p>Publish Date: <span>@Model.PublishDate</span></p>
-            <p>Body: <span>@Model.Body</span></p>
-            <p>
+            <p class="label">Author: <span class="data">@Model.Author</span></p>
+            <p class="label">Publish Date: <span class="data">@Model.PublishDate</span></p>
+            <p class="label">Blog Entry: <span class="data">@Model.Body</span></p>
+            <p class="label">
                 Tags:
-                <ul>
+                <ul class="data">
                     @foreach (var tag in Model.ContentTags)
                     {
-                        <li>@tag.Tag.Name</li>
+                        <li class="data">@tag.Tag.Name</li>
                     }
                 </ul>
             </p>
-            <a href="/Content/Update/@Model.ContentId">Update this entry</a>
-            <br />
-            <a href="/Content/Delete/@Model.ContentId">Delete this entry</a>
-            <br />
+            <div class="lowerButtons">
+                <form action="/Content/Update/@Model.ContentId">
+                    <input type="submit" value="Update" />
+                </form>
+                <form action="/Content/Delete/@Model.ContentId">
+                    <input type="submit" value="Delete" />
+                </form>
 
-            <h3><a href="/Genre/Index">Return to All Entries</a></h3>
+            </div>
+
+            <h3><a href="/Genre/Details/@Model.GenreId">Return to Genre Details</a></h3>
         </article>
         </div>
 </body>

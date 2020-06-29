@@ -16,7 +16,7 @@ html {
 
 h1 {
     text-align: center;
-    color: darkgreen;
+    color: black;
     margin-top: 50px;
 }
 
@@ -70,17 +70,17 @@ section ul {
 #genreArticle {
     display: grid;
     grid-template-rows: auto;
-    grid-column-gap: 10em;
+    grid-column-gap: 1em;
     width: 25%;
     height: 100px;
     margin-left: 500px;
 }
 
-#genreArticle article {
+/*#genreArticle article {
     
     padding: 2em;
     color: black;
-}
+}*/
 
 #genreArticle article img {
     width: 100%;
