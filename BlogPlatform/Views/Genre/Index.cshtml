@@ -9,26 +9,21 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Cleveland Genres and Blog Hangout</title>
-    <link rel="stylesheet" type="text/css" href="~/CSS/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/CSS/IndexStyle.css" />
 </head>
 <body>
     <h1>Cleveland Genres and Blog Hangout</h1>
     <div id="genreArticle">
         @foreach (var genre in Model)
         {
-        <article>
-            <h3>
-            <a href="/Genre/Details/@genre.Id">Genre Name: @genre.Name
-            <img src="~/Images/@genre.ImageName" alt="ImageFile @genre.ImageName">
-                </a>
-            </h3>
-            
-           
-                @*<a><img src=@restaurant.LinkImage id="project_item"></a>*@
-
-        </article>
-
+            <article>
+                <h3>
+                <a class="genreTitle" href="/Genre/Details/@genre.Id">@genre.Name
+                <img src="~/Images/@genre.ImageName" alt="ImageFile @genre.ImageName">
+                    </a>
+                </h3>
+            </article>
         }
-       </div>
+    </div>
 </body>
 </html>

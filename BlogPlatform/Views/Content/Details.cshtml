@@ -4,39 +4,42 @@
 }
 
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="~/CSS/style.css" />
+<link rel="stylesheet" type="text/css" href="~/CSS/DetailStyle.css" />
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
 </head>
 <body>
-    <h1> Content Blog  Details</h1>
-    <hr />    
-    <h4>
-        <a href="/Content/Update/@Model.ContentId">Update this entry</a>
-        <br />
-        <a href="/Content/Delete/@Model.ContentId">Delete this entry</a>
-        <br />
+    <h1>@Model.Title</h1>
+    <hr />
+    @*<img src="~/Images/@Model.ImageName" />*@
+    <div class="blogEntry">
+        <article>
+            <p class="label">Author: <span class="data">@Model.Author</span></p>
+            <p class="label">Publish Date: <span class="data">@Model.PublishDate</span></p>
+            <p class="label">Blog Entry: <span class="data">@Model.Body</span></p>
+            <p class="label">
+                Tags:
+                <ul class="data">
+                    @foreach (var tag in Model.ContentTags)
+                    {
+                        <li class="data">@tag.Tag.Name</li>
+                    }
+                </ul>
+            </p>
+            <div class="lowerButtons">
+                <form action="/Content/Update/@Model.ContentId">
+                    <input type="submit" value="Update" />
+                </form>
+                <form action="/Content/Delete/@Model.ContentId">
+                    <input type="submit" value="Delete" />
+                </form>
 
-        <p>Author: <span>@Model.Author</span></p>
-        <p>Publish Date: <span>@Model.PublishDate</span></p>
-        <p>Body: <span>@Model.Body</span></p>
-        <p>
-            Tags:
-            <ul>
-                @foreach (var tag in Model.ContentTags)
-                {
+            </div>
 
-                    <li>@tag.Tag.Name</li>
-
-                }
-            </ul>
-        </p>
-
-
-
-    </h4>
-    <h3><a href="/Genre/Index">Return</a></h3>
+            <h3><a href="/Genre/Details/@Model.GenreId">Return to Genre Details</a></h3>
+        </article>
+        </div>
 </body>
 </html>

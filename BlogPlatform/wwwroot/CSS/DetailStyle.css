@@ -1,0 +1,53 @@
+﻿body {
+    /*font-family: sans-serif;
+    line-height: 1.618em;
+    box-sizing: border-box;*/
+    background-image: url(/Images/BlogBackground1.jpg);
+    /*background-size: cover;
+    text-decoration: none;*/
+}
+
+h1 {
+    text-align: center;
+    color: darkgreen;
+    margin-top: 50px;
+}
+
+img{
+    align-content: center;
+    margin-left: 600px;
+}
+
+.blogEntry {
+    display: grid;
+    grid-template-rows: auto;
+    grid-column-gap: 10em;
+    width: 25%;
+    height: 100px;
+    margin-left: 600px;
+}
+
+.actions {
+    margin-left: 600px;
+    color: red;
+}
+
+.upperButtons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 600px;
+}
+
+.lowerButtons {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+}
+
+.label {
+    font-weight: bold;
+}
+
+.data {
+    font-weight: normal;
+    /*color: black;*/
+}

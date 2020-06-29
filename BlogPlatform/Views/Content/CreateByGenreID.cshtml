@@ -6,7 +6,7 @@
 }
 
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="~/CSS/style.css" />
+<link rel="stylesheet" type="text/css" href="~/CSS/DetailStyle.css" />
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -14,64 +14,75 @@
 </head>
 <body>
 
+    @*<img src="~/Images/@Model.ImageName" />*@
+    <h1>Add new blog entry:</h1>
+    <hr />
     <div id="genreArticle">
-        <h4>Content- Add new topics that relate to this topic</h4>
-
-        <br />
-        <h4>
-            <div class="row">
-                <div class="col-md-4">
-                    @*<form asp-action="CreateByGenreID">*@
-                    <form asp-action="Create">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="form-group">
-                            <label asp-for="Title" class="control-label"></label>
-                            <input asp-for="Title" class="form-control" width="100" required />
-                            <span asp-validation-for="Title" class="text-danger"></span>
-                        </div>
-                        <br />
-                        <div class="form-group">
-                            <label asp-for="Body" class="control-label"></label>
-                            <input asp-for="Body" class="form-control" width="100" required />
-                            <span asp-validation-for="Body" class="text-danger"></span>
-                        </div>
-                        <br />
-                        <div class="form-group">
-                            <label asp-for="Author" class="control-label"></label>
-                            <input asp-for="Author" class="form-control" width="50" required />
-                            <span asp-validation-for="Author" class="text-danger"></span>
-                        </div>
-                        <br />
-                        <div>
-                            <select asp-for="ContentTags[0].TagId">
-                                <option value="1">Tag 1</option>
-                                <option value="2">Tag 2</option>
-                                <option value="3">Tag 3</option>
-                            </select>
-                        </div>
-                        <br />
-                        <div>
-                            <select asp-for="ContentTags[1].TagId">
-                                <option value="1">Tag 1</option>
-                                <option value="2">Tag 2</option>
-                                <option value="3">Tag 3</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input asp-for="GenreId" class="form-control" value="@ViewBag.GenreId" type="hidden" />
-                        </div>
-                        <br />
-                        <div class="form-group">
-                            <input type="submit" value="Create" class="btn btn-primary" />
-                        </div>
-                        <br />
-                        <div>
-                            <a href="/Genre/Details/@ViewBag.GenreId">Return to Genre Details</a>
-                        </div>
-                    </form>
+        <div class="blogEntry">
+            <article>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        @*<form asp-action="CreateByGenreID">*@
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Title" class="control-label"></label>
+                                <input asp-for="Title" class="form-control" width="100" required />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label asp-for="Body" class="control-label"></label>
+                                <input asp-for="Body" class="form-control" width="100" required />
+                                <span asp-validation-for="Body" class="text-danger"></span>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label asp-for="Author" class="control-label"></label>
+                                <input asp-for="Author" class="form-control" width="50" required />
+                                <span asp-validation-for="Author" class="text-danger"></span>
+                            </div>
+                            <br />
+                            <div>
+                                <select asp-for="ContentTags[0].TagId">
+                                    <option value="1">Hot Peppers</option>
+                                    <option value="2">Mild Peppers</option>
+                                    <option value="3">Corn</option>
+                                    <option value="4">Rafting</option>
+                                    <option value="5">Oak</option>
+                                    <option value="6">Maple</option>
+                                    <option value="7">Table Saw</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div>
+                                <select asp-for="ContentTags[1].TagId">
+                                    <option value="1">Hot Peppers</option>
+                                    <option value="2">Mild Peppers</option>
+                                    <option value="3">Corn</option>
+                                    <option value="4">Rafting</option>
+                                    <option value="5">Oak</option>
+                                    <option value="6">Maple</option>
+                                    <option value="7">Table Saw</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="GenreId" class="form-control" value="@ViewBag.GenreId" type="hidden" />
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                            <br />
+                            <div>
+                                <h3><a href="/Genre/Details/@ViewBag.GenreId">Return to Genre Details</a></h3>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </h4>
+            </article>
+        </div>
         </div>
 </body>
 </html>
