@@ -44,29 +44,5 @@ namespace BlogPlatform.Repositories
             throw new NotImplementedException();
         }
 
-        //void IRepository<Genre>.Create(Genre obj)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //void IRepository<Genre>.Delete(Content content)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //IEnumerable<Genre> IRepository<Genre>.GetAll()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //Genre IRepository<Genre>.GetById(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //void IRepository<Genre>.Update(Content content)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

@@ -20,23 +20,16 @@ namespace BlogPlatform.Models
 
         public Content()
         {
-
         }
 
         public Content(int contentID, int genreID, string title, string body, string author, DateTime publishDate)
         {
-
             this.ContentId = contentID;
             this.GenreId = genreID;
             this.Title = title;
             this.Body = body;
             this.Author = author;
             this.PublishDate = publishDate;
-
-
-
         }
-
-
     }
 }
