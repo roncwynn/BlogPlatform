@@ -1,0 +1,44 @@
+﻿@model BlogPlatform.Models.Content
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="~/CSS/DetailStyle.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <h1>@Model.Title</h1>
+    <hr />
+    <div class="blogEntry">
+        <article>
+            <p class="label">Author: <span class="data">@Model.Author</span></p>
+            <p class="label">Publish Date: <span class="data">@Model.PublishDate</span></p>
+            <p class="label">Blog Entry: <span class="data">@Model.Body</span></p>
+            <p class="label">
+                Tags:
+                <ul class="data">
+                    @foreach (var tag in Model.ContentTags)
+                    {
+                        <li class="data">@tag.Tag.Name</li>
+                    }
+                </ul>
+            </p>
+            <div class="lowerButtons">
+                <form action="/Content/Update/@Model.ContentId">
+                    <input type="submit" value="Update" />
+                </form>
+                <form action="/Content/Delete/@Model.ContentId">
+                    <input type="submit" value="Delete" />
+                </form>
+
+            </div>
+
+            <h3><a href="/Genre/Details/@Model.GenreId">Return to Genre Details</a></h3>
+        </article>
+        </div>
+</body>
+</html>

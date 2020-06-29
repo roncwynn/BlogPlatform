@@ -1,0 +1,22 @@
+﻿@model IEnumerable<BlogPlatform.Models.Tag>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="~/CSS/style.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tags</title>
+</head>
+<body>
+    <h1>Tags</h1>
+    @foreach (var tag in Model)
+    {
+        <h3><a href="/Genre/Tags/@tag.Id">Genre Name: @tag.Name</a></h3>
+        <hr />
+    }
+
+</body>
+</html>

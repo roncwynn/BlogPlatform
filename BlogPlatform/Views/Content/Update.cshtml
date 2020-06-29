@@ -1,0 +1,87 @@
+﻿@model BlogPlatform.Models.Content
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="~/CSS/DetailStyle.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update Blog Entry</title>
+</head>
+<body>
+
+    <h1>You are editing the following entry</h1>
+    <hr />
+    <div class="blogEntry">
+        <article>
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Update">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ContentId" />
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <input asp-for="Title" class="form-control" required />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="Body" class="control-label"></label>
+                            <input asp-for="Body" class="form-control" required />
+                            <span asp-validation-for="Body" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="Author" class="control-label"></label>
+                            <input asp-for="Author" class="form-control" readonly />
+                            <span asp-validation-for="Author" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div>
+                            @*<select asp-for="ContentTags[0].TagId">
+                                <option value="1">Hot Peppers</option>
+                                <option value="2">Mild Peppers</option>
+                                <option value="3">Corn</option>
+                                <option value="4">Rafting</option>
+                                <option value="5">Oak</option>
+                                <option value="6">Maple</option>
+                                <option value="7">Table Saw</option>
+                            </select>*@
+                            <input asp-for="ContentTags[0].ContentId" value="@Model.ContentId" type="hidden" />
+                        </div>
+                        <br />
+                        <div>
+                            @*<select asp-for="ContentTags[1].TagId">
+                                <option value="1">Hot Peppers</option>
+                                <option value="2">Mild Peppers</option>
+                                <option value="3">Corn</option>
+                                <option value="4">Rafting</option>
+                                <option value="5">Oak</option>
+                                <option value="6">Maple</option>
+                                <option value="7">Table Saw</option>
+                            </select>*@
+                            <input asp-for="ContentTags[1].ContentId" value="@Model.ContentId" type="hidden" />
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input asp-for="GenreId" type="hidden" class="form-control" asp-items="@ViewBag.GenreId" />
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" value="Update" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br />
+            <div>
+                <h3><a href="/Content/Details/@Model.GenreId">Back To Blog Details</a></h3>
+            </div>
+        </article>
+    </div>
+</body>
+</html>

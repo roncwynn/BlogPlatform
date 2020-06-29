@@ -1,0 +1,66 @@
+﻿@model BlogPlatform.Models.Content
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="~/CSS/DetailStyle.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h1>Delete Blog Entry</h1>
+    <hr />
+    <div>
+        <div class="blogEntry">
+            <h3>Are you sure you want to delete?</h3>
+            <hr />
+            <article>
+                <dl class="row">
+                    <dt class="label">
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
+                    <dd class="data">
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+                    <dt class="label">
+                        @Html.DisplayNameFor(model => model.Body)
+                    </dt>
+                    <dd class="data">
+                        @Html.DisplayFor(model => model.Body)
+                    </dd>
+                    <dt class="label">
+                        @Html.DisplayNameFor(model => model.Author)
+                    </dt>
+                    <dd class="data">
+                        @Html.DisplayFor(model => model.Author)
+                    </dd>
+                    <dt class="label">
+                        @Html.DisplayNameFor(model => model.PublishDate)
+                    </dt>
+                    <dd class="data">
+                        @Html.DisplayFor(model => model.PublishDate)
+                    </dd>
+                    <dt class="label">
+                        @Html.DisplayNameFor(model => model.Genre)
+                    </dt>
+                    <dd class="data">
+                        @Html.DisplayFor(model => model.Genre.Id)
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="GenreId" />
+                    <input type="hidden" asp-for="ContentId" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                </form>
+                <br />
+                <h3><a href="/Content/Details/@Model.GenreId">Back To Blog Details</a></h3>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@model BlogPlatform.Models.Genre
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="~/CSS/DetailStyle.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+    <h1> @Model.Name Genre</h1>
+    <hr />
+    <img src="~/Images/@Model.ImageName" />
+
+    <div class="upperButtons">
+        <form action="/Content/CreateByGenreID/@Model.Id">
+            <input type="submit" value="Add New Blog" />
+        </form>
+        <form action="/Genre/Index">
+            <input type="submit" value="Return Home" />
+        </form>
+    </div>
+
+    <div class="blogEntry">
+        <article>
+            @foreach (var blog in Model.Content)
+            {
+                <h2><span><a href="/Content/Details/@blog.ContentId">@blog.Title </a> </span></h2>
+                <p>Author: <span>@blog.Author</span></p>
+                <p>Publish Date: <span>@blog.PublishDate</span></p>
+                <p>Body: <span>@blog.Body</span></p>
+                <p>
+                    Tags:
+                    <ul>
+                        @foreach (var tag in blog.ContentTags)
+                        {
+                            <li>@tag.Tag.Name</li>
+                        }
+                    </ul>
+                </p>
+                <hr />
+            }
+            <hr />
+        </article>
+        <div class="lowerButtons">
+            <form action="/Content/CreateByGenreID/@Model.Id">
+                <input type="submit" value="Add New Blog" />
+            </form>
+            <form action="/Genre/Index">
+                <input type="submit" value="Return Home" />
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
