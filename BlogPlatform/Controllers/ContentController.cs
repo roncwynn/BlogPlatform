@@ -82,10 +82,6 @@ public class ContentController:Controller
                 content.PublishDate = DateTime.Now;
                 int genreId = content.GenreId;
                 content.ContentTags.Clear();
-                //foreach (var item in content.ContentTags)
-                //{
-                //    content.ContentTags.Remove(item);
-                //}
                 ContentRepo.Update(content);
                 return RedirectToAction("Details", "Genre", new { id = genreId });
             }

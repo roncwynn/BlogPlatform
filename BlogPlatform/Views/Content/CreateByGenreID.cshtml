@@ -1,5 +1,4 @@
 ﻿@model BlogPlatform.Models.Content
-@*@model BlogPlatform.Models.ContentTag*@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = null;
@@ -14,7 +13,6 @@
 </head>
 <body>
 
-    @*<img src="~/Images/@Model.ImageName" />*@
     <h1>Add new blog entry:</h1>
     <hr />
     <div id="genreArticle">
@@ -23,7 +21,6 @@
                 <br />
                 <div class="row">
                     <div class="col-md-4">
-                        @*<form asp-action="CreateByGenreID">*@
                         <form asp-action="Create">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">

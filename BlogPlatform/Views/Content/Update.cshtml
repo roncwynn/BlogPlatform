@@ -15,7 +15,6 @@
 
     <h1>You are editing the following entry</h1>
     <hr />
-    @*<img src="~/Images/@Model.ImageName" />*@
     <div class="blogEntry">
         <article>
             <div class="row">
@@ -43,7 +42,7 @@
                         </div>
                         <br />
                         <div>
-                            <select asp-for="ContentTags[0].TagId">
+                            @*<select asp-for="ContentTags[0].TagId">
                                 <option value="1">Hot Peppers</option>
                                 <option value="2">Mild Peppers</option>
                                 <option value="3">Corn</option>
@@ -51,12 +50,12 @@
                                 <option value="5">Oak</option>
                                 <option value="6">Maple</option>
                                 <option value="7">Table Saw</option>
-                            </select>
+                            </select>*@
                             <input asp-for="ContentTags[0].ContentId" value="@Model.ContentId" type="hidden" />
                         </div>
                         <br />
                         <div>
-                            <select asp-for="ContentTags[1].TagId">
+                            @*<select asp-for="ContentTags[1].TagId">
                                 <option value="1">Hot Peppers</option>
                                 <option value="2">Mild Peppers</option>
                                 <option value="3">Corn</option>
@@ -64,7 +63,7 @@
                                 <option value="5">Oak</option>
                                 <option value="6">Maple</option>
                                 <option value="7">Table Saw</option>
-                            </select>
+                            </select>*@
                             <input asp-for="ContentTags[1].ContentId" value="@Model.ContentId" type="hidden" />
                         </div>
                         <br />

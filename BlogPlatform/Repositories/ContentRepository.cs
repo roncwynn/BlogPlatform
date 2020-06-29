@@ -39,9 +39,9 @@ namespace BlogPlatform.Repositories
 
         public void Update(Content content)
         {
-            //var entity = await DbContextInMemory.FindAsync(content);
             db.Contents.Update(content);
             db.SaveChanges();
         }
+
     }
 }

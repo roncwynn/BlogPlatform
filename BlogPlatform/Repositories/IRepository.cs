@@ -8,12 +8,10 @@ namespace BlogPlatform.Repositories
 {
     public interface IRepository<T> where T : class
     {
-
         public IEnumerable<T> GetAll();
         T GetById(int id);
         void Create(T obj);
         void Delete(Content content);
         void Update(Content content);
-
     }
 }

@@ -28,9 +28,6 @@ namespace BlogPlatform.Controllers
         {
             var model = this.TagRepo.GetById(id);
             return View(model);
-
-
         }
-
     }
 }
