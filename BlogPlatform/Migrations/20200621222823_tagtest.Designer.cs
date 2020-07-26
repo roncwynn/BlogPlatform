@@ -4,14 +4,16 @@ using BlogPlatform.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlogPlatform.Migrations
 {
     [DbContext(typeof(BlogPlatformContext))]
-    partial class BlogPlatformContextModelSnapshot : ModelSnapshot
+    [Migration("20200621222823_tagtest")]
+    partial class tagtest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,7 +56,7 @@ namespace BlogPlatform.Migrations
                             Author = "Jay Bowen",
                             Body = "Rons super wood",
                             GenreId = 1,
-                            PublishDate = new DateTime(2020, 6, 21, 19, 20, 0, 496, DateTimeKind.Local).AddTicks(3648),
+                            PublishDate = new DateTime(2020, 6, 21, 18, 28, 22, 996, DateTimeKind.Local).AddTicks(6433),
                             Title = "My first candle boat"
                         },
                         new
@@ -63,7 +65,7 @@ namespace BlogPlatform.Migrations
                             Author = "Ron Wynn",
                             Body = "Ash",
                             GenreId = 1,
-                            PublishDate = new DateTime(2020, 6, 21, 19, 20, 0, 499, DateTimeKind.Local).AddTicks(3400),
+                            PublishDate = new DateTime(2020, 6, 21, 18, 28, 22, 999, DateTimeKind.Local).AddTicks(6946),
                             Title = "My second candle boat"
                         },
                         new
@@ -72,64 +74,8 @@ namespace BlogPlatform.Migrations
                             Author = "Ron Wynn",
                             Body = "All rooms",
                             GenreId = 2,
-                            PublishDate = new DateTime(2020, 6, 21, 19, 20, 0, 499, DateTimeKind.Local).AddTicks(3520),
+                            PublishDate = new DateTime(2020, 6, 21, 18, 28, 22, 999, DateTimeKind.Local).AddTicks(7066),
                             Title = "Clean house"
-                        },
-                        new
-                        {
-                            ContentId = 4,
-                            Author = "Ron Wynn",
-                            Body = "this is body",
-                            GenreId = 3,
-                            PublishDate = new DateTime(2020, 6, 21, 19, 20, 0, 499, DateTimeKind.Local).AddTicks(3524),
-                            Title = "Swimming"
-                        });
-                });
-
-            modelBuilder.Entity("BlogPlatform.Models.ContentTag", b =>
-                {
-                    b.Property<int>("ContentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TagId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ContentId", "TagId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("ContentTag");
-
-                    b.HasData(
-                        new
-                        {
-                            ContentId = 1,
-                            TagId = 1
-                        },
-                        new
-                        {
-                            ContentId = 1,
-                            TagId = 2
-                        },
-                        new
-                        {
-                            ContentId = 2,
-                            TagId = 1
-                        },
-                        new
-                        {
-                            ContentId = 2,
-                            TagId = 3
-                        },
-                        new
-                        {
-                            ContentId = 3,
-                            TagId = 2
-                        },
-                        new
-                        {
-                            ContentId = 3,
-                            TagId = 3
                         });
                 });
 
@@ -162,12 +108,6 @@ namespace BlogPlatform.Migrations
                             Id = 2,
                             Description = "Husbands who are VolunTOLD by their wives",
                             Name = "Life"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Backyard adventures await",
-                            Name = "Pools"
                         });
                 });
 
@@ -189,17 +129,12 @@ namespace BlogPlatform.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Tag1"
+                            Name = "Tag One"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Tag2"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Tag3"
+                            Name = "Tag two"
                         });
                 });
 
@@ -208,21 +143,6 @@ namespace BlogPlatform.Migrations
                     b.HasOne("BlogPlatform.Models.Genre", "Genre")
                         .WithMany("Content")
                         .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BlogPlatform.Models.ContentTag", b =>
-                {
-                    b.HasOne("BlogPlatform.Models.Content", "Content")
-                        .WithMany("ContentTags")
-                        .HasForeignKey("ContentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BlogPlatform.Models.Tag", "Tag")
-                        .WithMany("ContentTags")
-                        .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

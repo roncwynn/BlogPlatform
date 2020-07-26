@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BlogPlatform.Models
@@ -16,9 +17,10 @@ namespace BlogPlatform.Models
         public int GenreId { get; set; }
         public virtual Genre Genre { get; set; }
 
+        public virtual IList<ContentTag> ContentTags { get; set; }
+
         public Content()
         {
-
         }
 
         public Content(int contentID, int genreID, string title, string body, string author, DateTime publishDate)

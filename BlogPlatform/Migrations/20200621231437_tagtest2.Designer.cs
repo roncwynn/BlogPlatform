@@ -4,14 +4,16 @@ using BlogPlatform.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlogPlatform.Migrations
 {
     [DbContext(typeof(BlogPlatformContext))]
-    partial class BlogPlatformContextModelSnapshot : ModelSnapshot
+    [Migration("20200621231437_tagtest2")]
+    partial class tagtest2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,7 +56,7 @@ namespace BlogPlatform.Migrations
                             Author = "Jay Bowen",
                             Body = "Rons super wood",
                             GenreId = 1,
-                            PublishDate = new DateTime(2020, 6, 21, 19, 20, 0, 496, DateTimeKind.Local).AddTicks(3648),
+                            PublishDate = new DateTime(2020, 6, 21, 19, 14, 37, 130, DateTimeKind.Local).AddTicks(7509),
                             Title = "My first candle boat"
                         },
                         new
@@ -63,7 +65,7 @@ namespace BlogPlatform.Migrations
                             Author = "Ron Wynn",
                             Body = "Ash",
                             GenreId = 1,
-                            PublishDate = new DateTime(2020, 6, 21, 19, 20, 0, 499, DateTimeKind.Local).AddTicks(3400),
+                            PublishDate = new DateTime(2020, 6, 21, 19, 14, 37, 134, DateTimeKind.Local).AddTicks(793),
                             Title = "My second candle boat"
                         },
                         new
@@ -72,17 +74,8 @@ namespace BlogPlatform.Migrations
                             Author = "Ron Wynn",
                             Body = "All rooms",
                             GenreId = 2,
-                            PublishDate = new DateTime(2020, 6, 21, 19, 20, 0, 499, DateTimeKind.Local).AddTicks(3520),
+                            PublishDate = new DateTime(2020, 6, 21, 19, 14, 37, 134, DateTimeKind.Local).AddTicks(908),
                             Title = "Clean house"
-                        },
-                        new
-                        {
-                            ContentId = 4,
-                            Author = "Ron Wynn",
-                            Body = "this is body",
-                            GenreId = 3,
-                            PublishDate = new DateTime(2020, 6, 21, 19, 20, 0, 499, DateTimeKind.Local).AddTicks(3524),
-                            Title = "Swimming"
                         });
                 });
 
@@ -110,26 +103,6 @@ namespace BlogPlatform.Migrations
                         {
                             ContentId = 1,
                             TagId = 2
-                        },
-                        new
-                        {
-                            ContentId = 2,
-                            TagId = 1
-                        },
-                        new
-                        {
-                            ContentId = 2,
-                            TagId = 3
-                        },
-                        new
-                        {
-                            ContentId = 3,
-                            TagId = 2
-                        },
-                        new
-                        {
-                            ContentId = 3,
-                            TagId = 3
                         });
                 });
 
@@ -162,12 +135,6 @@ namespace BlogPlatform.Migrations
                             Id = 2,
                             Description = "Husbands who are VolunTOLD by their wives",
                             Name = "Life"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Backyard adventures await",
-                            Name = "Pools"
                         });
                 });
 
@@ -189,17 +156,12 @@ namespace BlogPlatform.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Tag1"
+                            Name = "Tag One"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Tag2"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Tag3"
+                            Name = "Tag two"
                         });
                 });
 

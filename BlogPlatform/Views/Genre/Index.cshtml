@@ -15,6 +15,10 @@
     @foreach (var genre in Model)
     {
         <h3><a href="/Genre/Details/@genre.Id">Genre Name: @genre.Name</a></h3>
+        <hr />
     }
+    <hr />
+    <h4><a href ="~/Views/Content/Details/">Link to another page</a></h4>
+    <h4><a href="~/Views/Genre/Tags.cshtml">Link to Tags</a></h4>
 </body>
 </html>
